@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог персонажей — HSR Fan Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container page">
+      <header class="page-head">
+        <h1>Каталог персонажей</h1>
+        <a class="btn btn-secondary" href="{{ url_for('index') }}">На главную</a>
+      </header>
+
+      <section class="panel" id="filters-panel">
+        <div class="filters-grid">
+          <label>
+            Поиск
+            <input type="text" id="q" placeholder="name/id..." />
+          </label>
+          <label>
+            Путь
+            <select id="path">
+              <option value="all">Все</option>
+            </select>
+          </label>
+          <label>
+            Элемент
+            <select id="element">
+              <option value="all">Все</option>
+            </select>
+          </label>
+          <label>
+            Редкость
+            <select id="rarity">
+              <option value="all">Все</option>
+              <option value="5">5★</option>
+              <option value="4">4★</option>
+            </select>
+          </label>
+          <label>
+            Сортировка
+            <select id="sort">
+              <option value="rarity_desc_name_asc">Редкость ↓, Имя ↑</option>
+              <option value="name_asc">Имя ↑</option>
+              <option value="name_desc">Имя ↓</option>
+            </select>
+          </label>
+        </div>
+        <div class="filters-actions">
+          <span id="results-count">Найдено: 0</span>
+          <button id="reset-filters" class="btn btn-secondary" type="button">Сбросить</button>
+        </div>
+      </section>
+
+      <div id="status" class="status"></div>
+      <section id="characters-grid" class="cards-grid"></section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+    <script src="{{ url_for('static', filename='characters.js') }}" defer></script>
+  </body>
+</html>
