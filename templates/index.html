@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HSR Fan Catalog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <main class="container hero">
+      <h1>HSR Fan Catalog</h1>
+      <p>Фанатский MVP-каталог персонажей Honkai: Star Rail.</p>
+      <a class="btn" href="{{ url_for('characters_page') }}">Перейти в каталог</a>
+    </main>
+    <script src="{{ url_for('static', filename='app.js') }}" defer></script>
+  </body>
+</html>
